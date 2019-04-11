@@ -1,5 +1,4 @@
 import spidev
-
 from lib_tft144.lib_tft144 import *
 
 from RPi import GPIO
@@ -17,15 +16,8 @@ spi = spidev.SpiDev()
 
 #  Don't forget the other 2 SPI pins SCK and MOSI (SDA)
 
-
 TFT = TFT144(GPIO, spi, CE, DC, RST, LED, TFT144.ORIENTATION90, isRedBoard=False)
 # TFT = TFT144(GPIO, spi, CE, DC)     # the minimalist version
-
-while 1:
-    """ 
-    Logic for display goes here.
-    """
-
 
 ###########################
 # Simplified Method Calls###
@@ -82,9 +74,11 @@ def printBMP(bmpURL, sizeX, sizeY):
     TFT.draw_bmp("bl.bmp")
     sleep(6)
 
+
 def rectangleFill(x1, y1, x2, y2, color):
-    print ("Rectangle drawn")
+    print("Rectangle drawn")
     TFT.draw_filled_rectangle(x1, y1, x2, y2,color)
+
 
 def flashingRectangleFill(x1, y1, x2, y2, color, seconds):
     seconds = seconds

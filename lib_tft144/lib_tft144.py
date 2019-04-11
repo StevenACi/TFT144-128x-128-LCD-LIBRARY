@@ -175,7 +175,7 @@ class TFT144:
             GPIO.output(self.RST, False)
             sleep (0.2)
             GPIO.output(self.RST, True)
-        sleep (0.2)
+        sleep(0.2)
         return
 
     # write command to controller
