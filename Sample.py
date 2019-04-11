@@ -4,7 +4,7 @@ from time import sleep
 # This is a sample of what you will run to create your display
 
 # Display.py holds your configuration for the pins on your board
-# Display.py also holds a variety of display functions that will be sampled here.
+# Display.py also holds a variety of display functions, some of which will be sampled here...
 
 
 while 1:
