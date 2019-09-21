@@ -7,8 +7,7 @@ https://github.com/StevenAC
 I am updating the display library to include some more prebuilt shapes and animations -while committing further testing
 on the printBMP function, and also cleaning up the code for modern IDE's and python 3 coding conventions.
 
-printBMP: we can only read BMP images. included is a sample which will work, however bigger images may fail. Our
-processing cannot downscale infinitly, so careful manual downscaling is important.
+printBMP: we can only read BMP images. included is a sample which will work, however bigger images may fail. 
 
 CE0 or CE1: for my raspberry pi, CE0 was unresponsive, had no choice but to use CE1 pin.
 
