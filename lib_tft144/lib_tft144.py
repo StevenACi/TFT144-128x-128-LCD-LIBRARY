@@ -17,7 +17,7 @@ import os
 #   Added: SPI access, BMP file load, double size fonts, python class
 #   Works on: Rasp Pi GPIO,    or "virtual GPIO" 3.3V   (identical library for both)
 
-#                   THIS BOARD WORKS A TREAT !!!!                         BL
+#                                   BL
 
 # ************************************************************************
 #
