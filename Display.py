@@ -1,7 +1,14 @@
 import spidev
 from lib_tft144.lib_tft144 import *
-
 from RPi import GPIO
+
+"""
+Functions to Display onto the tft144. Use these in your main loops. 
+Why a functional class?
+The Low Level interfaces are referenced here, instead of in a container object. This eliminates the 
+risk of duplication, race conditions, stale data. All calls to print the screen can go through this class.-Sc
+"""
+
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -19,9 +26,7 @@ spi = spidev.SpiDev()
 TFT = TFT144(GPIO, spi, CE, DC, RST, LED, TFT144.ORIENTATION90, isRedBoard=False)
 # TFT = TFT144(GPIO, spi, CE, DC)     # the minimalist version
 
-###########################
-# Simplified Method Calls###
-# ##//INTERFACE/SECTION//###
+
 ###########################
 
 # Defining literals to make writing colors easier
@@ -41,10 +46,6 @@ CYAN = TFT.CYAN
 
 COLORS = [BLUE, LIGHTBLUE, GREEN, LIGHTGREEN, RED, PINK, BLACK, WHITE, GREY, YELLOW, MAGENTA, CYAN]
 
-
-###########################
-#Simplified Method Calls###
-####//METHOD SECTION//#####
 ###########################
 
 def printMessage(strin, xOrigin, yOrigin, fgColor, bgColor):
@@ -99,11 +100,8 @@ def line(x1, y1, x2, y2, color):
 def circle(x1, y1, radius, color):
     TFT.draw_circle(x1, y1, radius, color)
 
+### Samples and Test functions
 
-#########################
-#MISC METHODS#
-###################
-#########################
 def displayAllChars():
     posx = 0
     posy = 0
@@ -197,7 +195,3 @@ def iterativeCenterFade():
     while cCount < 11:
         rectangleCenterFade(COLORS[cCount])
         cCount += 1
-
-#############
-#MAIN LOOP#
-#############
